@@ -1,0 +1,17 @@
+To view what is in the file
+---------------------------
+
+cat {file name} -> (e.g cat file1.txt)
+
+cat > {new file name} -> create a new file using cat command (Note :: you can type type contents of file right away in shell and press ctrl d two times to exit editing)
+
+cat {file name} > {new file name} -> copies a file using cat command
+
+cat /proc/cpuinfo -> displays the cpu information
+
+cat /etc/passwd -> displays all the informations in passwd
+
+cat -n /etc/passwd -> displays all the information in passwd with line no
+
+
+
