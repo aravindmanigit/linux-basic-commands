@@ -1,0 +1,27 @@
+To copy files
+-------------
+
+cp {file name} {folder name} -> copies file to directory (e.g cp file1 dir1)
+
+cp {directory name} {directory name} -> copies directory to another directory (eg cp dir1 dir2)
+
+Note :: you may get error while directory coppying in that case
+
+cp -rf {directory name} {directory name}
+
+cp {file name} {directory name}{/new file name} -> copies the file and changes the file name in the copied directory with new name. (e.g cp file1 dir1/newfile1)
+
+To move file
+------------
+
+mv {file name} {directory name}
+
+mv {directory name} {directory name}
+
+To rename a file or directory
+-----------------------------
+
+mv {name of file} {new file name} (e.g mv file1 file2)
+
+
+
