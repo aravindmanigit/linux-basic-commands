@@ -1,0 +1,62 @@
+Soft Links and Hard Links
+-------------------------
+
+Soft Links
+----------
+
+ln -s /home/shared/access_log access_soft -> creates a short cut of access_log file from location /home/shared/ and the short cut is named as 
+					     access_soft. The short cut will be created in pwd.
+
+stat access_soft -> gives the stats about the short cut. It will be stated that it is symbolic link. The permission will be 777
+
+if the name of the original file then the symbolic link will not work.
+
+mv /home/shared/access_log /home/shared/access_log_old
+
+The symbolic link will appear in red when listed.
+
+If we again change the name of the linked file to its original name then symbolic link / shaortcut will work.
+
+mv /home/shared/access_log_old /home/shared/access_log
+
+it will now work and it can be checked by
+
+cat access_soft | less (Note :: press q to quit out of less)
+
+Hard Links
+----------
+
+ln /home/shared/access_log accessshared -> link will not created and the directory size is same as that of original directory.
+					   The permissions also will be same as that of original file.
+
+stat accesshard -> gives the stat about the accesshard. It will be stated that it is regular file. The permission will be same as that of original file (e.g 0644)
+
+
+cat accesshard | less
+
+If we change the permission of the hard link file, the permission in the original file will also change
+
+chmod 600 accesshard
+
+Now check the original file permission. It will also be as same as hard link file. 
+
+If we change the permission of original file the hard link permission will also change accordingly.
+
+chmod 644 /home/shared/access_log
+
+Check the hard link, it will also be the same.
+
+
+If the original file is changed or renamed or moved location, then the hard link will not be affected as because as the hard link directly
+refers to the file in the hard disk location.
+
+mv /home/shared/access_log /home/shared/access_log_old
+
+Now check the hard link / shortcut. Try to access the hard link it will work normally
+
+cat accesshard | less
+
+Note :: If we want to create a hard link both original file and hard link / shortcut should present in the same harddisk. otherwise it will not work.
+
+
+
