@@ -1,0 +1,111 @@
+useradd aravind
+
+adduser aravind -> adduser alias for useradd
+
+vi etc/passwd -> view the file where the user information is stored
+
+(for e.g aravind:x:504:504::/home/aravind:/bin/bash
+         x -> password
+	 504 -> userid
+	 504 -> usergroup id (by default same as userid)
+	 /home/aravind -> home directory for the user
+	 /bin/bash -> access shell (Note services such as ftp dont have access to shell)
+
+passwd aravind
+Changing password for user aravind.
+New Password: xxxxxx
+Retype new Password: xxxxxx
+passwd: all authentication tokens updated successfully
+
+To see the password file
+------------------------
+
+vi /etc/shadow
+
+(for e.g)
+
+aravind:ENCRYPTED PASSWORD/:16037:3:72:7:::
+
+ENCRYPTED PASSWORD -> encrypted password for the user. The encryption letter Starts after : and ends before /. If there is no password set
+                       it will be denoted by !!
+16037 -> no of days after feb 1 1970, unix created dated the password was last changed
+3 -> you cant change he password for 3 days.
+72 -> no of days after which password must be changed (By default when a new user is created it will be 99999)
+7 -> no of days the system will warn you to change the password (By default it will be 7 when new user is created)
+
+
+vi etc/login.defs
+
+You can change the attributes like PASS_MAX_DAYS, PASS_MIN_DAYS, PASS_MIN_LEN, PASS_WARN_AGE, UID_MIN, UID_MAX, GID_MIN, GID_MAX, CREATE_HOME,
+
+How to delete a user
+--------------------
+
+userdel aravind -> this will delete the user but not the user directory in home
+
+userdel -r hari -> this will delete the user and also the user directory in home
+
+Modify a user
+-------------
+
+chage -l aravind -> gives information like last password change, password expires, password inactive, Account expires etc
+
+chage --help
+
+chage -m 3 aravind -> this will change the min no of days before password change to MIN_DAYS
+
+chage -l aravind
+
+
+Note :: to change the user details for all the newly created users we will use the file /etc/login.defs. Whereas if we want to change a particulr
+user then we will the chage command
+
+How to create a group
+---------------------
+
+vi /etc/group (to quit from vi type :q!)
+
+(for e.g)
+aravind:x:500
+x-> passsord
+500 -> group id
+
+groupadd {name of group} -> for e.g groupadd sales
+
+tail /etc/group -> tail brings to the end of the file
+
+To see the status of user
+-------------------------
+
+id aravind
+
+(for e.g) uid=500(aravind) gid=500(aravind) groups=500(aravind)
+
+
+To add user to group
+--------------------
+
+usermod -aG {group name} {user name} -> for e.g usermod -aG sales aravind
+
+check with id aravind
+
+for e.g, 
+uid=500(aravind) gid=500(aravind) groups=500(aravind),503(sales) -> the primary group is still same but sales had been added up
+
+
+How to delete a group
+---------------------
+
+groupdel {name of group} -> for e.g groupdel sales
+
+check: id aravind
+
+
+
+
+
+
+
+
+
+
