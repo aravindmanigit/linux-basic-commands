@@ -1,0 +1,41 @@
+Using pipes ("|") we can combine several commands. Output of one command becomes input of another command
+
+ls -l | less
+
+cat {file name} | less -> displays a large file with less
+
+ps -aux -> processes running on the system
+
+ps -aux | less
+
+cat {file name} | sort -r -> if file contains numbers it will sort in reverse order
+
+cat {file name} | sort -r | less -> we can combine any number of commands
+
+Redirects
+---------
+
+Redirect Output
+---------------
+
+The redirection output sign is ">"
+
+It is used to redirect the output of command, script or program to another command, script or program as input.
+
+ls -l > {file name} -> Tell to get the information from ls -l and save those information in a file.
+
+ps -aux > {file name} 
+
+Note :: ps -aux > {file name} will throw an error. In that case remove the "-" and execute as ps aux > {file name} 
+
+Redirect Input
+-------------
+
+The redirection output sign is "<"
+
+
+It is used to redirect the input of command, script or program to another command, script or program as output
+
+sort < {file name} -> Takes the input from file to the command
+
+
