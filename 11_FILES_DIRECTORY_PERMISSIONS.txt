@@ -1,0 +1,119 @@
+-rw-r--r-- -> total 10 bits
+
+e.g -rw-r--r-- aravind(this is user) aravind(this is group)    0 MAR 23 09:35 test.txt
+    drw-r--r-- aravind(this is user) aravind(this is group) 4096 MAR 23 09:35 testdir
+
+- -> first bit if it is '-' means it is a file and if first bit is 'd' it mans it is a directory
+rw- -> first 3 bits are the permission for the owner
+r-- -> the second 3 bits are the permission for the group
+r-- -> the last 3 bits are the permission for any other user on the system
+
+r denotes read and has octal number 4
+w denotes write and has octal number 2
+x denotes execute and has octal number 1
+
+take -rw-r--r-- aravind(this is user) aravind(this is group)    0 MAR 23 09:35 test.txt for example
+
+This denotes the user aravind has read and write rights, the group aravind can only read this file, the other users only have the read permission.
+
+take -rw-r--r-- aravind(this is user) aravind(this is group)    0 MAR 23 09:35 test.txt for example
+
+For calculating the octal number, the user aravind has the octal number of 6 ie r = 4, w = 2 and no execute permission. So it is 6 for the user aravind
+Similarly the octal number for group will be 4 since it has only read =4 the write and execute are 0. In this case it is 4+0+0 = 4.
+Finally the octal number for other users in this system is also 4
+
+so all together the permission is 644 for the file test.txt.
+
+Another example to calculate the permission,
+
+drwxr-xr-x aravind(this is user) aravind(this is group) 4096 MAR 23 09:35 testdir
+
+So the permission for the directory named testdir will be 755
+
+so the default permission for a file created will have 644 and the defualt permission for a directory will be 755
+
+To switch user
+--------------
+
+su dev -> change to normal user
+
+su - -> change to root
+Password:
+
+To CHECK current user
+---------------------
+
+whoami -> dev
+
+Now try to edit the text.txt with user dev. Since only read permission is given for other users in the system, it will not allow to edit
+
+vi test.txt -> try to edit and a W10 Warning message is dipslayed at the bottom as readonly file.
+try to save the file after modifying error message is displayed as E45: 'readonly' option is set (add ! to override)
+
+
+To change the permission of file or directory
+---------------------------------------------
+
+chmod 646 test.txt
+
+This may throw error if the permission is changed by another user as operation not permitted.
+
+su aravind
+Password:
+
+Now issue the chmod 646 test.txt
+
+ls -l
+-rw-r--rw- aravind(this is user) aravind(this is group)    0 MAR 23 09:35 test.txt
+
+Now switch back to user dev
+Edit and save the same file. It will successfully save the file.
+
+Note :: If the directory is created by a user, the permission will be 700 for e.g
+
+drwx------ aravind(this is user) aravind(this is group)    0 MAR 23 09:35 testdir
+
+if we try to open a directory created by other users, then the error message thrown will be
+ls -l dev/
+ls: cannot open directory dev/: permission denied
+
+if we want user dev to access the file test.txt which was created by user aravind and have a permission 644, then 
+we will give the permission as 664 and add the user dev to the group aravind belongs to.
+
+for e.g chmod 664 test.txt
+su -
+password:
+useradd -aG aravind dev -> aravind is group of aravind and dev is the user name.
+
+su dev
+groups -> displays the group user belongs to
+vi test.txt
+edit and change the file contents. It will be successful in this case.
+
+To change the owner of file o directory
+---------------------------------------
+
+chown -R {new owner user id} {name of the file to be change the ownership}
+
+chown -R hari text.txt -> this may throw error if the current user is not the owner of the file.
+su -
+password:
+chown -R hari text.txt
+check with ls -l
+
+To change the group of the file or directory
+--------------------------------------------
+
+chown -R :{new group name} {name of the file or directory}
+
+chown -R :newgroup test.txt
+check with ls -l
+
+
+
+
+
+
+
+
+
