@@ -1,0 +1,19 @@
+Type "cd /" and press tab two times -> list all the directories in /
+
+Type "cd /h" and press tab it will complete the directory name. (for e.g /home)
+
+Type "cd /s" and press tab twice. If there are multiple directories with the letter s then all of the directories will be displayed when tab is pressed twice.
+
+When arrow up key is pressed it will display the previously entered commands
+
+When shift and page up is pressed it will take a one page up of history 
+
+When shift and page down is pressed it will take one page down of history
+
+crtl c to kill a running process
+
+ctrl d to log out of current terminal
+
+ctrl s will not display the typed in words and if we want to see the typed in word press ctrl q
+
+ 
