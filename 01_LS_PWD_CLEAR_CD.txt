@@ -1,0 +1,55 @@
+Present Working Directory
+--------------------------
+
+pwd
+
+Note ~ will be the /home/{current_user} directory
+
+
+List directories and files
+--------------------------
+
+ls
+
+ls -l  -> prints permissions, size in bytes, date and time
+
+ls -a  -> displays all the hidden files (. will be appear before filename for hidden files)
+
+ls -la
+
+ls -lh -> size of file and directory in different format
+
+ls -lah or ls -lha
+
+ls -F -> displays the directories with a / suffix (e.g aravind/)
+
+ls -r -> displays files and directories in reverse order (Note :: comapre it with ls)
+
+ls -lt -> display files and folder in order of time of creation from the newest and latest
+
+ls -lS -> displays the file and directories by Size from biggest to smallest (Note :: S should be in capital letter)
+
+ls --help  -> full list of options available for ls
+
+To clear the screen
+-------------------
+
+clear
+
+To change Directory
+-------------------
+
+cd /home/{current_user}/1 (or) simply cd 1
+
+cd .. -> to back a directory back
+
+cd ~ -> to go back to the /home/{current_user}
+
+
+
+
+
+
+
+
+

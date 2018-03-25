@@ -1,0 +1,44 @@
+To create a new Directory
+-------------------------
+
+mkdir {name of directory}
+
+mkdir dir1 dir2 dir3 -> create multiple directories
+
+mkdir -p a/b/c/d/e -> creates directory inside another directory
+
+mkdir -pv 1/2/3/4/5 -> creates directory inside another directory but gives in a verbose manner in order of creation
+
+To remove a directory
+---------------------
+
+rmdir {directory name}
+
+Note you will get error if directory is not empty, meaning it contains another directory within it
+
+rm -rfv {directory name}
+
+To create a file
+----------------
+
+touch {name of the file}
+
+touch file1 file2 file3 file4 -> multiple files can be created at the same time
+
+To remove a file
+----------------
+
+rm {file name}
+
+rm file1 file2 file3 -> remove multiple files
+
+rm -i {file name} -> asks for confirmation for the removal of the file Note you need to y or n to remove or not
+
+rm -i *.txt -> removes all the files with extension txt
+
+rm -i fil*.txt -> removes the files with prefix fil
+
+
+
+
+
