@@ -1,0 +1,42 @@
+To archive file or directory
+----------------------------
+
+tar -cvf {new file or directory name usually with an extenion tar} {path}
+
+To view the contents inside archive file or directories
+-------------------------------------------------------
+
+tar -tf {tar file name} -> view the contents without extracting the contents
+
+tar -xvf {tar file name} -> extracting the contents
+
+Compressing the file
+--------------------
+
+gzip or bzip can be used for compression
+
+gzip {tar name file} -> it will compress the tar file with gz extension (e.g test.tar.gz) Note :: the tar file will not be there
+
+gunzip {name of the gziped compressed file} -> (e.g gunzip test.tar.gz) Note :: the tar file will be there
+
+bzip2 {tar file name} -> it will compress the tar file with bz2 extension (e.g test.tar.bz2) Note :: the tar file will not be there
+
+bunzip2 {name of the bzipped compressed file} -> (e.g bunzip test.tar.bz2) Note :: the tar file will be there
+
+Another way to compress to files or directories
+-----------------------------------------------
+
+tar -zcvf {new file name with gz extension} {directory or file name to archive} -> tar -zcvf test.tar.gz test
+
+tar -jcvf {new file name with bz2 extension} {directory or file name to archive} -> tar -jcvf test.tar.bz2 test
+
+
+Note :: bzip2 compression is better compared to gzip compression
+ 
+
+
+
+
+
+
+
