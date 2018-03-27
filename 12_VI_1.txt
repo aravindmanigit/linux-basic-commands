@@ -1,0 +1,62 @@
+vi -> shows the version and some information about vi
+
+:q -> to quit vi
+
+vi test -> creates a new empty file named test
+
+press i -> to go into insert mode
+
+To go to command mode press "Enter" and to save the file :wq
+
+cat test -> to see the file
+
+Navigation in vi
+----------------
+
+press 'w' to move word by word
+
+press 'b' to move backword word by word
+
+Press '$' to go to the end of the line
+
+press '0' to go to the begining of the line
+
+press 'shift + m' to go the middle of the screen
+
+Press 'shith + l' to go to the end of line in the screen
+
+press 'shift + h' to go to the first line of the screen
+
+press 'ctrl + f' to move one page forward
+
+press 'ctrl + b' to move back one page backward
+
+Press (Capital) 'G' to the end of the file
+
+press (small) 'g' to the begining of the file
+
+press line no for e.g '5' + (Captial) 'G' to go to the 5 th line of the file
+
+press 'o' to open a new line
+
+:q! to quit without saving
+
+Deleting in vi (Note :: all below should be executed without insert mode)
+--------------
+
+Press 'x' to delete a char
+
+press no of chars to delete for e.g '6' + 'x' to delete 6 chars
+
+press 'd' + 'w' to delete a whole word
+
+press 'd' + 0 to delete from the cursor point to start of the line
+
+press 'd' + '$' to delete a line from cursor point
+
+press 'd'+'d' to delete a entire line
+
+press no of lines to delete for e.g '6' +'d'+'d' to delete a no of lines
+
+
+
