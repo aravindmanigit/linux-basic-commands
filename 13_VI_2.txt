@@ -1,0 +1,40 @@
+press 'c'+'c' -> It will remove the current line and changes to insert mode
+
+Press 'r' -> to change or replace the char on current position.
+
+press shift + 'r' -> this changes to replace mode and multiple chars can be replaced
+
+press 's' -> changes to insertmode and removes the current cursor position char.
+
+press shift + 's' -> it will remove the whole line and changes to insert mode.
+
+press 'y' + 'y' -> to copy a line from current cursor position.
+
+press shift + 'p' -> to paste the copied line from 'y' + 'y' Note this is paste the contents before the current cursor lin position
+
+		Just press 'p' after copied line from 'y' + 'y' it will paste the copied content after the current cursor position.
+
+To search for a word
+---------------------
+
+press '/' followed by the word to be searched -> /{word to search} and press enter and for the following occurance press / and enter.
+
+	Note the /{word to search} will search from top to bottom. If Yu want search from bottom to top
+
+	'?' + word to search -> searches from bottom to top. Press ? and enter for the other occurances.
+
+To replace a word in a line
+---------------------------
+
+type ':s/' + {word to be replaced} + "/" + {new word to replace} + '/g'
+
+  -> :s/hari/aravind/g 
+
+  Note the cursor should be pointed to the line in which the word needs to be changes.
+
+
+
+
+
+
+
