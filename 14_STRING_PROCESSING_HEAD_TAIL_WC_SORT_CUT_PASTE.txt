@@ -1,0 +1,65 @@
+head
+----
+
+head {file name} -> displays the first 10 lines of the file
+
+head -n{no of lines to display} {file name} -> e.g head -n5 test.txt displays the first 5 lines of the file
+
+head -v {file name} -> displays the first 10 lines of the file and the name of file at top
+
+
+tail
+----
+
+tail {file name} -> displays the last 10 lines of the file
+
+tail -n{no of lines to display} {file name} -> e.g tail -n4 test.txt displays the last 4 lines of the file
+
+tail -f {file name} -> displays the update of file at current time
+
+count
+-----
+wc {file name} -> displays the no of lines, no of words and its size by bytes followed by the file name
+
+for e.g wc test.txt
+        10 34 65 test.txt
+
+wc -l {file name} -> displays only the line nos
+wc -w {file name} -> displays only the words count
+wc -c {file name} -> displays only the file size in bytes
+
+ls /etc/ | wc -l -> lists the no of files and directories in the /etc folder
+
+sort
+----
+
+sort -n {file name} -> sorts the contents of the file in order
+
+if non number file type sort {file name}
+
+grep bash /etc/passwd -> lists all the files that contains the word 'bash' in /etc/passwd
+
+grep bash /etc/passwd | sort -> displays the contents in alphabetical order
+
+sort -u {file name} -> removes the duplicate lines in the file
+
+sort {file name} | uniq -> also removes the duplicate lines in the file
+
+cut
+---
+
+cut -f1 -d: /etc/group
+aravind:x:502: -> f1 represents the first field and -d represents the separator char in this case it is :
+
+
+cut -f1,3 -d: /etc/passwd
+aravind:x:502:502::/home/aravind:/bin/bash -> cuts the first and third field with the separator being :
+
+
+paste
+-----
+
+combine the contents of two files
+
+paste -d, firstname.txt lastname.txt > employeename.txt
+cobmines the contents of the files with the separator "," and redirects it to a new file named employeename.txt
