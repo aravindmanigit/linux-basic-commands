@@ -1,0 +1,36 @@
+grep is gendrally used for search operation.
+
+grep "{word to search}" {file name} -> grep "Aravind" test.txt
+
+grep -i "Aravind" test.txt -> ignores the case and searches for the word specified.
+
+grep "d$" test.txt -> displays the lines that ends with 'd'
+
+grep -i "d$" test.txt -> ignores case and displays the lines that end with the char 'd'
+
+grep "^w" test.txt -> displays all of the lines that starts with the char 'w'
+
+grep -i "^w" test.txt -> ignores cases and  displays all of the lines that starts with the char 'w'
+
+grep "l.*" test.txt -> dipalays all the lines that contain the letter 'l' and does not matter where the char is from i.e it can be at start or at end or even at middle.
+
+grep "vind$" test.txt -> displays the lines that end with 'vind'
+
+grep -i "^a.*vind$" test.txt -> displays the line that starts with 'a' and ends with 'vind'
+
+grep -i '[hf]' test.txt -> displays all the lines that contains the letter 'h' or 'f'. Note that it is a single quote and not double quote.
+
+grep -i "Mon Dec 03" log.txt -> displays all the lines that contain "Mon Dec 03"
+
+grep -i "Mon Dec 03" log.txt | wc -l -> displays the lines that contain "Mon Dec 03" and also shows the no of lines that contains it.
+
+grep -i "Mon Dec 03" log.txt | grep "aravind.vm" ->  displays the lines that contain "Mon Dec 03" and further filters by the word 'aravind.vm'
+
+grep -i "Mon Dec 03" log.txt | grep "aravind.vm" | wc -l
+
+grep -i "Mon Dec 03" log.txt | grep "aravind.vm" > test1.txt -> redirects the out of the search to the file named test1.txt
+
+
+
+
+
