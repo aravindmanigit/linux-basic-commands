@@ -1,0 +1,36 @@
+yum update -> updates all the packages in the system
+
+yum --exclude=kernel* update -> excludes kernel package
+
+yum update grep -> updates a single package named grep
+
+yum install jwhois -> installs a new package
+
+yum remove jwhois -> removes the package
+
+yum repolist -> lists the repository on the system
+
+yum provides grep -> gives information about grep package
+
+yum search unzip -> searches any package that has the word unzip in it
+
+yum info mysql -> gives info about the package
+
+yum clean all -> cleans up all of the cache files that yum creates that take up huge size
+
+yum deplist mysql -> shows the dependency needed
+
+yum list installed | less -> list the installed packages
+
+
+To install a new repository
+---------------------------
+
+rpm -Uvh {link}
+
+rpm -qa | grep rpmforge
+
+yum remove {full name of rpm to be removed}
+
+
+
