@@ -1,0 +1,26 @@
+By sed command we can replace the content of the file.
+
+sed -n '2p' {file name} -> displays the second line in the file
+
+sed -e '/^$/d' {file name} -> displays the lines in the file avoiding the empty line break
+
+sed -n '2!p' {file name} -> shows all the lines expect the 2 nd line
+
+sed -n '1,5p' {file name} -> displays from line 1 to line 5
+
+sed -n '$p' {file name} -> displays the last line in the file.
+
+sed -ne '/{word to search}/p' {file name} -> searches for the word in the file this is similar to grep
+
+sed -ne '/[0-9]/p' {file name} -> this will return the lines that has a number on it
+
+sed -e 's/{search word}/{replace word}/g' {file name} -> replaces the search word with replave word
+for e.g -> sed -e 's/hari/aravind/g' test.txt > test1.txt
+Note :: if not redirected then the original file will be replace
+
+sed -i.bak -n '1,5p' {file name} -> takes a backup of the specified file
+
+
+
+
+
