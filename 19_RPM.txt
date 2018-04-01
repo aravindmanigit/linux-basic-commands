@@ -1,0 +1,38 @@
+rpm -qa -> list all the installed rpm packages
+
+rpm -qa | grep "jwhois" -> jwhois-4.0-19.el6.x86_64 where 4.0-19 is the version, el6 is the red hat version and x86_64 is the platform
+
+rpm -qa | sort | less -> list all packages in alphabectial order
+
+rpm -qi jwhois -> displays the information about the package
+
+rpm -ql jwhois -> list all the installed files
+
+rpm -qf /bin/sync -> shows the binary file is related to the package
+
+rpm -qd jwhois -> shows the path of documents of the package
+
+rpm -qc jwhois -> shows the configuration file of the package
+
+rpm -qpi {link} -> gives the information of the package for the link specified
+
+rpm -Vvf /bin/gzip -> check the binary is corrupt or not. Note there will be 9 dots in all files and directory and it means it is not corrupted.
+
+rpm -ivh {name of the file} -> for e.g rpm -ivh unzip-6.0-1.el6.x86_64.rpm
+-> to check type rpm -qa | grep "unzip"
+
+rpm -Uvh {link} -> update an existing package
+
+rpm -Uvh --replacepkgs {link} -> replaces the old package with new package
+
+rpm -e jwhois -> removes the package
+-> to check rpm -qa | grep "jwhois"
+
+cheat sheet
+-----------
+//https://www.cyberciti.biz/howto/question/linux/linux-rpm-cheat-sheet.php
+
+
+
+
+
