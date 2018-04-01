@@ -1,0 +1,28 @@
+awk command is similar to grep command.
+
+awk '{print $0}' {file name} | less -> displays all the lines in a file similarly to cat command.
+
+grep " 200" log.txt | less -> displays the whole line but it is not possible to get a particular field. The field is usually separated by a single space.
+
+awk '{print $9}' log.txt | less -> this will print all the information in field 9 
+
+awk '{print $0, $9}' log.txt | less -> we can combine the fields together.
+
+awk '{print $0, "---", $9}' log.txt | less -> we can introduce chars between the fields that are been displayed.
+
+awk '/word to search/ {print $0}' log.txt | less -> we can search the contents that contains the word to search
+
+awk '$7=="/word to search" {print $1}' log.txt | less -> we can search if a particular field contains the word to search.
+
+awk '$9==500 {print $0}' log.txt | less
+
+ps -ef | awk '{print $1,$8}' | less
+
+ps -ef | awk '$1=="postfix" {print $1,$8}' | less  
+
+
+
+
+
+
+

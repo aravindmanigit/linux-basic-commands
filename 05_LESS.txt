@@ -1,6 +1,8 @@
 To view large files
 -------------------
 
+cat does not allow to scroll up if the content of the file is large.
+
 less {file name} -> you can now scroll up and down using arrow keys. A collan will appear at the end of the screen
 		    if you want to find a a word type "/" followed by word to search.
 		    ctr + g -> gives information about the current page
