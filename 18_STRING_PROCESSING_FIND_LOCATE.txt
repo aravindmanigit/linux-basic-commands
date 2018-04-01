@@ -1,0 +1,39 @@
+If you dont have locate command in your system, then you need to install
+yum install mlocate
+
+locate -i messages -> displays all the file/directory names that contains messages in it. It does not search in the pwd but entire system. -i is for incase sensitive
+Note if error message appears as locate: can not stat() ....., then keyin updatedb
+
+locate -i messages | less
+
+locate -i *example* -> displays the files/directory that contains any word as example
+
+locate -i -n5 *example* -> displays the first five results for the file/directory that conatains the word example
+
+locate -r '\.txt$' -> search for any file that has .txt extension
+
+locate -r '\ple$' -> $ sign means the file/directory ends with ple and there is no letter after ple
+
+find
+----
+
+find /home -name "example.txt" -> search for file name example.txt under home directory
+
+find /home -iname "exmple.txt"
+
+find /home -empty -> search for any empty file under the /home
+
+find . -type f -exec ls -s {} \; | sort -n -r | head -5 -> displays the 5 largest files under the pwd
+
+find . -type f exec ls -s {} \; | sort -n | head -5 -> displays the 5 smallest files under pwd
+
+find . -type d -> displays all the directory under pwd
+
+find . -type f -> displays all the files under pwd
+
+find . -type f -name ".*" -> displays all the hidden files inder pwd
+
+find /home -size +1M -> displays all the files that have more than 1 MB in /home directory (+1M files have more than 1MB, 1M exactly 1 MB in size, -1M size less than 1 MB)
+
+
+
