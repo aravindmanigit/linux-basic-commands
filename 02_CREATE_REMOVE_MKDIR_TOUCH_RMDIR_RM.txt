@@ -38,6 +38,8 @@ rm -i *.txt -> removes all the files with extension txt
 
 rm -i fil*.txt -> removes the files with prefix fil
 
+rm -f /path/to/file -> force remove a file if it asks rm: remove write-protected regular file
+
 
 
 
